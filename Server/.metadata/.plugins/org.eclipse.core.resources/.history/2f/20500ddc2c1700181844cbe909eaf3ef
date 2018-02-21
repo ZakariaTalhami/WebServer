@@ -1,0 +1,58 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.StringTokenizer;
+
+public class HttpRequest implements Runnable {
+	final String CRLF = "\r\n";
+	Socket socket;
+	public HttpRequest(Socket socket) throws Exception
+	{
+		this.socket = socket;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try
+		{
+			processRequest();
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+	
+	private void processRequest() throws Exception
+	{
+		System.out.println("processingRequest");
+		 PrintWriter out =
+	        new PrintWriter(socket.getOutputStream(), true);
+	    BufferedReader in =
+	        new BufferedReader(
+	            new InputStreamReader(socket.getInputStream()));
+	    BufferedReader stdIn =
+	        new BufferedReader(
+	            new InputStreamReader(System.in));
+	    String userInput;
+	    //Get the request line from the Header of the packet
+	    String requestLine = in.readLine();
+	    System.out.println("Request Line: " + requestLine);
+	    while ((userInput = in.readLine()).length() != 0) {
+//			    	System.out.println("in the loop");
+//			        out.println(userInput);
+	        System.out.println("echo: " + in.readLine());
+	    }
+	    //Tokenize the String
+	    System.out.println("asuibnfuias");
+	    StringTokenizer Tokens = new StringTokenizer(requestLine, " ");
+	    String method =  Tokens.nextToken();
+	    String File = Tokens.nextToken();
+	    System.out.println("Method: " +method);
+	    System.out.println("File: " + File);
+			
+			
+	}
+
+}

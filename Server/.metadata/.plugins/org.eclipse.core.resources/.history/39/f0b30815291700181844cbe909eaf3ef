@@ -1,0 +1,27 @@
+
+import java.io.* ;
+import java.net.* ;
+import java.util.* ;
+public final class WebServer {
+
+	public static void main(String[] args)  throws Exception{
+		// TODO Auto-generated method stub
+		//set the port number to 8899 instead of 80
+		int port = 8895;
+		//creating a socket to listen
+		ServerSocket ServerEar = new ServerSocket(port);
+		System.out.println("Server is on!");
+		//loop for infinity
+		//when a request comes, create a new thread
+		//and socket to handle the request
+		while (true) {
+			Socket connectionSocket = ServerEar.accept(); 
+			System.out.println("Got request!");
+			HttpRequest Handler = new HttpRequest(connectionSocket);
+			Thread thread = new Thread(Handler);
+//			thread.start();
+		}
+		
+	}
+
+}

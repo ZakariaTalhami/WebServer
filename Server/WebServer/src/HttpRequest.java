@@ -1,4 +1,4 @@
-package WebServer;
+//package WebServer;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -51,7 +51,13 @@ public class HttpRequest implements Runnable {
             tokens.nextToken();
             String fileName = tokens.nextToken();
             fileName = fileName.substring(1);
-            
+            /*
+             * 	this is for the Site folder 
+             */
+            	fileName = "../../Site/"+fileName;
+            /*
+             * 
+             */
             System.out.println(fileName);
             
             

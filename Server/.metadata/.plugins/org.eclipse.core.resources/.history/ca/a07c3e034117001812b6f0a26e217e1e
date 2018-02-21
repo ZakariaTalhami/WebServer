@@ -60,16 +60,16 @@ public class HttpRequest implements Runnable {
             String fileName = tokens.nextToken();
             fileName = fileName.substring(1);
             /*
-             * 	this is for the Site folder
+             * 	this is for the Site folder 
              */
             	fileName = "../../Site/"+fileName;
             /*
              * 
              */
-            System.out.println("Requested File:> "+fileName);
+            System.out.println(fileName);
             
             
-            //Open the requested file from storage
+            
             FileInputStream fis = null;
             boolean fileExists = true;
             try
@@ -83,7 +83,7 @@ public class HttpRequest implements Runnable {
             }
             
             
-            // Prepare the Response Header
+            
             String statusLine = null;
             String contentTypeLine = null;
             String entityBody = null;
@@ -102,7 +102,7 @@ public class HttpRequest implements Runnable {
                 "<body>Not Found</body></html>";
             }
             
-            //send Header out
+            
             os.writeBytes(statusLine);
             os.writeBytes(contentTypeLine);
             os.writeBytes(CRLF);
@@ -125,50 +125,44 @@ public class HttpRequest implements Runnable {
             socket.close();
         }
         
-        /*
-    	 * Returns the Content type depending on the extension of the 
-    	 * Requested file from the browser 
-    	 */
-        private static String contentType(String fileName)
+private static String contentType(String fileName)
+	{
+		if(fileName.endsWith(".htm") || fileName.endsWith(".html"))
 		{
-			if(fileName.endsWith(".htm") || fileName.endsWith(".html"))
-			{
-				return "text/html";
-			}
-			if(fileName.endsWith(".txt"))
-			{
-				return "text/plain";
-			}
-			if(fileName.endsWith(".css"))
-			{
-				return "text/css";
-			}
-			if(fileName.endsWith(".js"))
-			{
-				return "text/javascript";
-			}
-			if(fileName.endsWith(".png"))
-			{
-				return "image/png";
-			}
-			if(fileName.endsWith(".jpeg"))
-			{
-				return "image/jpeg";
-			}
-			if(fileName.endsWith(".wav"))
-			{
-				return "audio/wav";
-			}
-			return "application/octet-stream";
+			return "text/html";
 		}
+		if(fileName.endsWith(".txt"))
+		{
+			return "text/plain";
+		}
+		if(fileName.endsWith(".css"))
+		{
+			return "text/css";
+		}
+		if(fileName.endsWith(".js"))
+		{
+			return "text/javascript";
+		}
+		if(fileName.endsWith(".png"))
+		{
+			return "image/png";
+		}
+		if(fileName.endsWith(".jpeg"))
+		{
+			return "image/jpeg";
+		}
+		if(fileName.endsWith(".wav"))
+		{
+			return "audio/wav";
+		}
+		return "application/octet-stream";
+	}
 
-        /*
-         * Reads from file and sends out the data
-         */
+        
         private static void sendBytes(FileInputStream fis, DataOutputStream os) throws Exception {
             
-	        byte[] buffer = new byte[1024];
-	        int bytes = 0;
+        byte[] buffer = new byte[1024];
+        int bytes = 0;
         
             while((bytes = fis.read(buffer)) != -1 ){
                 os.write(buffer,0,bytes);

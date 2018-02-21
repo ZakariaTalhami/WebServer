@@ -162,13 +162,11 @@ public class HttpRequest implements Runnable {
 			return "application/octet-stream";
 		}
 
-        /*
-         * Reads from file and sends out the data
-         */
+        
         private static void sendBytes(FileInputStream fis, DataOutputStream os) throws Exception {
             
-	        byte[] buffer = new byte[1024];
-	        int bytes = 0;
+        byte[] buffer = new byte[1024];
+        int bytes = 0;
         
             while((bytes = fis.read(buffer)) != -1 ){
                 os.write(buffer,0,bytes);

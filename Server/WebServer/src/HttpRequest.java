@@ -18,11 +18,19 @@ import java.util.logging.Logger;
 public class HttpRequest implements Runnable {
 	final String CRLF = "\r\n";
 	Socket socket;
+	/*
+	 * HttpRequest Constructor
+	 * Takes the Communication socket as input
+	 */
 	public HttpRequest(Socket socket) throws Exception
 	{
 		this.socket = socket;
 	}
         
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
 	@Override
 	public void run() {
             
@@ -37,9 +45,38 @@ public class HttpRequest implements Runnable {
 
 	}
 
-        
+        /*
+         * processRequest: 	processes and responses to the given request on the socket
+         * 					returns into the socket the requested page or error page
+         * 					if the page is not found.
+         */
         private void processRequest() throws Exception
         {
+        	/*
+        	 * 	Indicates whether the request message came from mobile 
+        	 */
+        	boolean isMobileRequest = false;
+        	
+        	/*
+        	 * Get the Socket Identification Addresses
+        	 * 				including host addresses and communication host addresses
+        	 */
+        	String LocalHost_IP = socket.getRemoteSocketAddress().toString();
+        	int LocalHost_PORT = socket.getLocalPort();
+        	String Connection_IP = socket.getInetAddress().toString();
+        	int Connection_POrt = socket.getPort();
+        	/*
+        	 * Print out he communicating hosts Addresses
+        	 */
+        	System.out.println("The Sockets Addtress:");
+        	System.out.println("LocalHost IP address: "+LocalHost_IP);
+        	System.out.println("LocalHost port address: "+LocalHost_PORT);
+        	System.out.println("Connected IP address: "+Connection_IP);
+        	System.out.println("Connected port address: "+Connection_POrt);
+        	System.out.println();
+        	/*
+        	 * Create Read and write buffers from the socket
+        	 */
             BufferedReader is = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             DataOutputStream os = new DataOutputStream(socket.getOutputStream());
             
@@ -51,7 +88,10 @@ public class HttpRequest implements Runnable {
             String requestMessage;
             System.out.println("\t\t"+requestLine);
             while((requestMessage = is.readLine()).length() != 0){
-            	System.out.println("\t\t"+requestLine);
+            	System.out.println("\t\t"+requestMessage);
+            	if (requestMessage.contains("Mobile")) {
+                    isMobileRequest = true;
+                }
             }
             
             //Get the Request file name from the request line
@@ -59,6 +99,12 @@ public class HttpRequest implements Runnable {
             tokens.nextToken();
             String fileName = tokens.nextToken();
             fileName = fileName.substring(1);
+            if(fileName.isEmpty()){
+            	fileName = "index.html";
+            }
+            if (isMobileRequest) {
+                fileName = "mobileSite/" + fileName;
+            } 
             /*
              * 	this is for the Site folder
              */
@@ -123,6 +169,7 @@ public class HttpRequest implements Runnable {
             os.close();
             is.close();
             socket.close();
+            System.out.println("-----------------------------");
         }
         
         /*
@@ -155,10 +202,19 @@ public class HttpRequest implements Runnable {
 			{
 				return "image/jpeg";
 			}
+			if(fileName.endsWith(".jpg"))
+			{
+				return "image/jpg";
+			}
 			if(fileName.endsWith(".wav"))
 			{
 				return "audio/wav";
 			}
+			if(fileName.endsWith(".mp3"))
+			{
+				return "audio/mpeg3";
+			}
+
 			return "application/octet-stream";
 		}
 

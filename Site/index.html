@@ -5,43 +5,292 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/master.css">
+  <link href="https://fonts.googleapis.com/css?family=Krona+One|Open+Sans:600" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
 
-  <header>
+  <header class="shadow-inset">
     <div class="Center Image">
         <img src="images\hierarchical-structure_256.png" alt="Arrr, it do be me logo!"  width="10%">
     </div>
     <nav>
-      <ul class="inline">
-        <li> <a href="#"></a> </li>
-        <li> <a href="#"></a> </li>
-        <li> <a href="#"></a> </li>
-        <li> <a href="#"></a> </li>
+      <ul class="inline no-padding no-margin">
+        <li class="NavItem hoverable shadow-inset"> <a href="#">Home </a> </li>
+        <li class="NavItem hoverable shadow-inset"> <a href="#">Characters</a> </li>
+        <li class="NavItem hoverable shadow-inset"> <a href="#">World Building</a> </li>
+        <li class="NavItem hoverable shadow-inset"> <a href="#">Maps</a> </li>
       </ul>
     </nav>
-
+  </header>
     <div class="containter">
-      <div class="SideBar">
 
+      <div class="SideBar">
+        <div class="shadow-inset">
+
+        </div>
+        <ul class="">
+          <div class="SideBarItem shadow-inset-light">
+            <a href="#Priest"><li class="hoverable-light"> <span class="Priest"></span><span class="tag"> The high Priest </span></li></a>
+          </div>
+          <div class="SideBarItem shadow-inset-light">
+            <a href="#Heretic"><li class="hoverable-light">  <span class="Heretic"></span> <span class="tag">Heretic</span></li></a>
+          </div>
+          <div class="SideBarItem shadow-inset-light">
+            <a href="#Tad"><li class="hoverable-light">  <span class="Tad"></span>  <span class="tag">Captain Tad</span></li></a>
+          </div>
+          <div class="SideBarItem shadow-inset-light">
+            <a href="#Ref"><li class="hoverable-light"><span class="Ref"></span> <span class="tag">Referee</span></li></a>
+
+          </div>
+        </ul>
       </div>
 
       <div class="Main">
+        <h2 class="underlined w-90">The Holy Lands Of Pizzora</h2>
+          <p class="Story indent">
+            Pizzora was the lands that the needy would seek, and the opportunists
+            would be attracted to, a place of warmth, peace and fortune for those
+            of cunning mind and quick wits. Pizzora lay on the west side of the
+            continent, a great port on the aldoonian sea, its strategic location
+            brought it great riches, with them the city grew and flourished.
+          </p>
+          <p class="Story indent">
+            Pizzora was a theocratic nation, ruled by the hands of the high priest
+            of pizzora, and beneath him were his acolytes who uphold the law and
+            justice. The citizens of pizzora cherished the high priests and his
+            church, they gather twice a week for social and religious activities,
+            and many times through the year in annual festivals.
+          </p>
+          <p class="Story indent">
+            The reign of peace and bless of pizzora, came to an abrupt halt, and
+            everything changed when the Heretic armies attacked, sacking and
+            setting the city ablaze. A once peaceful nation, swear a sacred vow
+            to rid the world of the Heretic scum. Consumed with hatred, the once
+            peaceful people of Pizzora transformed into dark, mean creatures, no
+            more so, than the High priest himself.
+          </p>
+          <!--
+              Character section: the High priest of Pizzora
+        -->
+        <br>
+          <div class="Char" id="Priest">
+            <h4 class="CharTitle w-70 underlined">The high Priest Of Pizzora</h4>
+            <p class="Backstory indent">
+              The high priest was the ruler of Pizzora, the hand of the deity that
+              governed the affairs of the lands, chosen through a religious ceremony;
+              the Priest would make the Great palace of Picaira his own.
+            </p>
+
+            <p class="Backstory indent" >
+              Serving him were a group of twelve Acolytes, these acolytes upheld
+              the law and attended the religious festivals. As the Priest was the
+              hand, the Acolytes were the fingers that governed the land and were
+              responsible for the growth and welfare of the nation.
+            </p>
+
+            <p class="Backstory indent">
+              All this changed after the Heretic armies attacked, the High priest
+              turn dark with lust for the heretics’ blood, he turned to dark powers
+              to achieve his goal of terminating the Heretics in his beloved lands,
+              he acquired forgotten knowledge, knowledge that was best left forgotten.
+            </p>
+
+            <p class="Backstory indent">
+              The high priest learnt new forms of magical power that he used in
+              the war against the heretics but slowly this power started to infect
+              the Priest and his acolytes, twisting their beliefs and minds,
+              turning them to paths of cruelty, and with this power the mighty
+              city of Pizzora transformed from the paradise it was to a city
+              full of horror, shadow and nightmare.
+            </p>
+            <div class="ImageSlider">
+              <figure class="figure Center">
+                <div class="" style="position: relative;">
+                  <img src="images/me2.jpg" class="Slide-0" alt="THP">
+                  <img src="images/me.jpg" class="Slide-0 hidden" alt="THP">
+                  <img src="images/cityscape.jpg" class="Slide-0 hidden" alt="THP">
+                  <button type="button" name="0" class="Slider-btn Slider-btn-left">&lt;</button>
+                  <button type="button" name="0" class="Slider-btn Slider-btn-right">&gt;</button>
+                </div>
+                <figcaption class="figure-caption-0">The high priest of Pizzora</figcaption>
+                <figcaption class="figure-caption-0 hidden">The Dark priest of Pizzora</figcaption>
+                <figcaption class="figure-caption-0 hidden">The City of Pizzora</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!--
+              Character section: the Heretic of Pizzora
+        -->
+        <br>
+          <div class="Char" id="Heretic">
+            <h4 class="CharTitle w-70 underlined">The Heretic Kurrath The Mad</h4>
+            <p class="Backstory indent">
+              Kurrath the mad, was born of a pristine family in the lands of Pizzora,
+              he spent his youth in the streets of pizzora, in those days this was
+              quite safe, he loved the city and its people, and would go around
+              in his free time helping the folk out in their work.
+            </p>
+
+            <p class="Backstory indent">
+              At the age of ten, Kurrath suffered two tragedies, the first was
+              the banishment of his family to the country and the ceasing of their
+              wealth by the hands of the High priest, this brought a change in the
+              life style of Kurrath, as there wasn’t anyone around to talk to, and
+              he missed the city.
+            </p>
+
+            <p class="Backstory indent">
+              The second tragedy was the death of his father, where kurrath found
+              his father hanging one night in the barn. Kurrath blamed the High
+              priest for his father’s death, as the banishment by the priest led
+              to his father taking his own life.
+            </p>
+
+            <p class="Backstory indent">
+              Kurrath swore that one day he will bring justice to his father, and
+              rid the lands of the filth of the Pizzorian church that in
+              his eyes mind was suppressing its people.
+            </p>
+
+            <div class="ImageSlider">
+              <figure class="figure Center">
+                <div class="" style="position: relative;">
+                  <img src="images/h1.png" class="Slide-1" alt="THP">
+                  <img src="images/h2.jpg" class="Slide-1 hidden" alt="THP">
+                  <img src="images/h3.jpg" class="Slide-1 hidden" alt="THP">
+                  <button type="button" name="1" class="Slider-btn Slider-btn-left">&lt;</button>
+                  <button type="button" name="1" class="Slider-btn Slider-btn-right">&gt;</button>
+                </div>
+                <figcaption class="figure-caption-1">Kurrath The Mad</figcaption>
+                <figcaption class="figure-caption-1 hidden">The heretic Company</figcaption>
+                <figcaption class="figure-caption-1 hidden">The heretic Army</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!--
+              Character section: Captain Tad of Pizzora
+        -->
+        <br>
+          <div class="Char" id="Tad">
+            <h4 class="CharTitle w-70 underlined">Captain Tad The Pirate</h4>
+            <p class="Backstory indent">
+              Before Tad joined the criminal life and became a pirate, he was a
+              respected citizen of pizzora, he owned a inn on the western side
+              of city, near the docks. His inn was respectable for an inn near
+              the docks, business was good and he made lots of profit.
+            </p>
+            <p class="Backstory indent">
+              Alas, he witnessed firsthand the severe changes to the city after
+              the Heretic attacks, Tad was greatly affected by the attacks; his
+              inn had caught fire and by the time the fires were extinguished
+              half the inn was gone, along with his wealth. As he couldn’t run a
+              inn anymore, Tad turned the ruined inn into a grimy bar at the docks.
+            </p>
+            <p class="Backstory indent">
+              But Tad’s miseries didn’t end there, after getting into trouble some
+              noble men he was forced to flee the city with a bunch of sailors,
+              the captain of the ship agreed to take Tad in as a deck hands, quickly
+              tad grew to know the traded as if he did all his life.
+            </p>
+            <p class="Backstory indent">
+              After years at sea, Tad had acquired ships and crews, and was able
+              to assemble an armada of pirate ships, and he set sail back to the
+              lands of pizzora, seeking vengeance on those whom wronged him.
+            </p>
+            <div class="ImageSlider">
+              <figure class="figure Center">
+                <div class="" style="position: relative;">
+                  <img src="images/Captain_Tad.jpg" class="Slide-2" alt="THP">
+                  <img src="images/Tad_ship.jpg" class="Slide-2 hidden" alt="THP">
+                  <img src="images/Tad_fleet.jpg" class="Slide-2 hidden" alt="THP">
+                  <button type="button" name="2" class="Slider-btn Slider-btn-left">&lt;</button>
+                  <button type="button" name="2" class="Slider-btn Slider-btn-right">&gt;</button>
+                </div>
+                <figcaption class="figure-caption-2">Captain Tad</figcaption>
+                <figcaption class="figure-caption-2 hidden">Captain Tad's Pirate Ship</figcaption>
+                <figcaption class="figure-caption-2 hidden">Captain Tad's Pirate Fleet</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!--
+              Character section: Referee of Pizzora
+        -->
+        <br>
+          <div class="Char" id="Ref">
+            <h4 class="CharTitle w-70 underlined">The Lost Referee</h4>
+            <p class="Backstory indent">
+              The referee was a student at a university called Birzeit, he is studying
+              computer engineering and is in his fifth and final year. He is a social
+              type, always volunteering at events and occasions, one of these
+              volunteer work, was to Referee the football matches that were held
+              every Tuesday and Thursday.
+            </p>
+
+            <p class="Backstory indent">
+              At the end of such day, when all the matches were done and referees
+              job was done he set off to the changing rooms to wash up. As he
+              reached the changing rooms he pushed the door and the rush of wind
+              from the door brought him the taste of sulphur and smell of ash.
+            </p>
+
+            <p class="Backstory indent">
+              Entering the room the Referee caught the sound of humming in the
+              back of the room, it seemed to be coming from behind one the changing
+              curtains, he called out but there was no answer, so he decided to
+              walk up to the curtain and open it. Behind it he found a large green
+              sphere laying on the floor humming gently, the referee reached down
+              and touched it, his out stretched fingers touched the surface and with
+              a jolt of pain and everything went dark.
+            </p>
+
+            <p class="Backstory indent">
+              The referee woke up, got up and looked around, he was not in the
+              changing room, he was in side street of a city, the city was unfamiliar
+              and strange, a man in strange clothes walked by, the Referee ran after
+              the man and caught up to him and asked,” Where am i?, what is this Place?”,
+              and the man looked at him strange and replied,
+                  “Pizzora of course!, the greatest city in the lands.”.
+            </p>
+
+            <div class="ImageSlider">
+              <figure class="figure Center">
+                <div class="" style="position: relative;">
+                  <img src="images/R.jpg" class="Slide-3" alt="THP">
+                  <img src="images/R.jpg" class="Slide-3 hidden" alt="THP">
+                  <img src="images/R.jpg" class="Slide-3 hidden" alt="THP">
+                  <button type="button" name="3" class="Slider-btn Slider-btn-left">&lt;</button>
+                  <button type="button" name="3" class="Slider-btn Slider-btn-right">&gt;</button>
+                </div>
+                <figcaption class="figure-caption-3">Glowing Green Sphere</figcaption>
+                <figcaption class="figure-caption-3 hidden">Glowing Green Sphere</figcaption>
+                <figcaption class="figure-caption-3 hidden">Glowing Green Sphere</figcaption>
+              </figure>
+            </div>
+          </div>
 
       </div>
+
     </div>
-
-    <footer>
-
+    <footer class="Center shadow-inset">
+      <a href="#">Top</a>
+      <p>CopyRight &copy; 2018</p>
       <ul class="inline footer">
-        <li> <a href="#"></a> </li> |
-        <li> <a href="#"></a> </li> |
-        <li> <a href="#"></a> </li> |
-        <li> <a href="#"></a> </li>
+        <li> The high Priest </li> |
+        <li> Heretic </li> |
+        <li> Captain Tad </li> |
+        <li> Referee </li>
       </ul>
     </footer>
-  </header>
-
+    <audio autoplay volume='0.0' id="myaudio" >
+      <!-- <source src="horse.ogg" type="audio/ogg"> -->
+      <source src="a.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <script>
+      var audio = document.getElementById("myaudio");
+      audio.volume = 0.4;
+    </script>
+  <script src="js/thingy.js" charset="utf-8"></script>
 </body>
 </html>
